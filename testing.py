@@ -13,6 +13,7 @@ cursor.execute('''
         id INTEGER PRIMARY KEY,
         name VARCHAR(50) NOT NULL,
         street_address VARCHAR(100) NOT NULL,
+        owner_id INTEGER,
         city VARCHAR(50) NOT NULL,
         state TEXT NOT NULL,
         zip_code INTEGER NOT NULL
@@ -25,7 +26,7 @@ cursor.execute('''
         user_id INTEGER NOT NULL,
         business_id INTEGER NOT NULL,
         stars INTEGER NOT NULL,
-        review_text TEXT,
+        review_text VARCHAR(1000),
         FOREIGN KEY (user_id) REFERENCES users(id),
         FOREIGN KEY (business_id) REFERENCES businesses(id)
     )
